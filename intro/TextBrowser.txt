@@ -1,0 +1,9 @@
+TextBrowser富文本浏览窗
+TextBrowser显示部件对应类为 QTextBrowser，可以理解为是一个HTML浏览器部件，QTextBrowser是 QTextEdit的子类，是一种增加了导航功能的QTextEdit的只读模式。
+
+如下几个功能在此重点说一下：
+除了使用QTextEdit的文本操作功能外，还可以通过source属性来指定文本来源一个文件，文件的路径由searchPaths和当前路径来决定；
+对文本中超链可以控制是否可以直接用鼠标和键盘点击打开；
+对于非文件和src资源的内容可以控制是否作为外部链接调用web浏览器打开；
+有几个类似浏览器导航的操作触发的信号，包括：anchorClicked、backwardAvailable、forwardAvailable、highlighted、historyChanged、sourceChanged；
+有几个导航历史数据的访问方法，包括：backwardHistoryCount、clearHistory、forwardHistoryCount、historyTitle、historyUrl。

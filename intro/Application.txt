@@ -1,0 +1,12 @@
+QApplication继承自QGuiApplication，专门为QGuiApplication提供基于QWidget的应用程序所需的一些功能，处理特定于QWidget的初始化。
+对于任何使用Qt的GUI应用程序，无论应用程序在任何给定时间是否具有0、1、2或更多窗口，都有且只有一个QApplication对象。
+
+QApplication的主要职责范围是：
+1、它使用用户的桌面设置初始化应用程序，如palette()、font()和doubleClickInterval()。它会跟踪这些属性，以防用户全局更改桌面，例如通过某种控制面板。
+2、它执行事件处理，这意味着它从底层窗口系统接收事件，并将它们分派到相关的QWidget。通过使用sendEvent()和postEvent()，您可以将自己的事件发送到小部件。
+3、它解析常见的命令行参数，并相应地设置其内部状态。
+4、它定义了应用程序的外观，并将其封装在一个QStyle对象中。这可以在运行时使用setStyle()进行更改。
+5、它提供了用户可以通过translate()看到的字符串的本地化。
+6、它提供了一些好用的对象，比如desktop()和clipboard()。
+7、它知道应用程序的窗口。您可以使用widgetAt()询问哪个Qwidget位于某个位置，获取topLevelWidgets()和closeAllWindows()的列表，等等。
+8、它管理应用程序的鼠标光标处理。
